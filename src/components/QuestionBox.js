@@ -1,31 +1,32 @@
-
+//import statement
 import React,{useState} from "react";
 import question from "../questions"
 import Result from "./Result"
 
+//function components
 export default function QuestionBox(props){
   let color = props.props
   let [highlight, setLight]= useState(false)
-
+  //Inline styling is used 
   let css = {
-    background:color?"#A020F0":"#FFFF00",
+    background:color?"#A020F0":"#ffffba",
   }
 
   let highlightstyle= {
-    color : highlight?"purple":"black",
+    color : highlight?"red":"black"
 
   }
 
   let [QuesNo,setNo]= useState(0)
   let [score , setScore]=useState(0)
-
+  //Event handler 
   let handleOption =(el)=>{
     console.log(el.target.value)
 
     setScore((el.target.value === 'true'?score+1:score))
     setNo(QuesNo+1)
   }
-
+  //Conditional Rendering method 
   return(
     <>
     {QuesNo <5 ?(

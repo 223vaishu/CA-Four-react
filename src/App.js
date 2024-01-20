@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import QuestionBox from "./components/QuestionBox";
-import Result from "./components/Result";
-import questions from "./questions";
-
-
-
 
 function App() {
    const[theme,setTheme] = useState(true)
@@ -17,7 +12,7 @@ function App() {
     width:"100vw",
     height:"100vh",
    }
-
+    //Hook effect 
    useEffect(()=>{
     if(themeName == 'Dark'){
       setThemeName('Light')
@@ -34,6 +29,7 @@ function App() {
     <div style={background} className="container">
       <div className="header">
         <h1>Kalvium</h1>
+        <h2>Quiz</h2>
         <button onClick={handleTheme} className="themeBtn">{themeName}</button>
       </div>
       <QuestionBox props = {theme}/>
